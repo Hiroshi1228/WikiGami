@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">WikiGami</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Datos del perfil-->
+    <string name="Perfil">Mi perfil</string>
+    <string name="User">Nombre de usuario</string>
+    <string name="Email">Correo</string>
+    <string name="Password">Contraseña</string>
+    <string name="Actualizar">Editar información</string>
+    <string name="UpdatePass">Cambiar Contraseña</string>
+    <string name="closeSesion">Cerrar Sesión</string>
+</resources>
