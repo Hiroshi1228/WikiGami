@@ -54,16 +54,6 @@
             app:civ_border_color="@color/azul1"
             app:civ_border_width="2dp" />
 
-        <TextView
-            android:id="@+id/changePhoto"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:text="Cambiar foto de perfil"
-            android:textAlignment="center"
-            android:textColor="#000"
-            android:textSize="15sp" />
 
 
         <TextView

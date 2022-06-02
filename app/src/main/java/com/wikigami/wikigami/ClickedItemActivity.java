@@ -20,7 +20,6 @@ public class ClickedItemActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
         textView = findViewById(R.id.tvName);
 
-
         Intent intent = getIntent();
 
         if(intent.getExtras() != null){
@@ -30,8 +29,5 @@ public class ClickedItemActivity extends AppCompatActivity {
             textView.setText(selectedName);
             imageView.setImageResource(selectedImage);
         }
-
-        //set value;
-
     }
 }

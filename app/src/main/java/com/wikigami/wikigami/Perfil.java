@@ -1,13 +1,18 @@
 package com.wikigami.wikigami;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -31,6 +36,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.squareup.picasso.Picasso;
+import com.wikigami.wikigami.CambiarPassword.CambiarPassword;
 
 
 import java.util.HashMap;
@@ -41,17 +47,9 @@ public class Perfil extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
 
-    //private CircleImageView profileImageView;
-    //private Button save_info;
-    TextView UserName, MailData /*change_photo*/;
+    TextView UserName, MailData;
     Button ActualizarInfo, ActualizarPass, btnCloseSesion;
-
-    private DatabaseReference databaseReference;
-
-    private Uri imageUri;
-    private String myUri = "";
-    private StorageTask uploadTask;
-    private StorageReference storageProfilePicsRef;
+    CircleImageView profileImg;
 
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
@@ -63,40 +61,19 @@ public class Perfil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
-       // profileImageView = findViewById(R.id.profile_image);
-
-       // change_photo = findViewById(R.id.changePhoto);
-
         UserName = findViewById(R.id.UserName);
         MailData = findViewById(R.id.MailData);
 
-       // save_info = findViewById(R.id.SaveInfo);
         ActualizarInfo = findViewById(R.id.ActualizarInfo);
         ActualizarPass = findViewById(R.id.ActualizarPass);
         btnCloseSesion = findViewById(R.id.btn_CloseSesion);
+        profileImg = findViewById(R.id.profile_image);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
         user = firebaseAuth.getCurrentUser();
 
         BASE_DE_DATOS = FirebaseDatabase.getInstance().getReference("REGISTRO_DE_USUARIOS");
-
-        //storageProfilePicsRef = FirebaseStorage.getInstance().getReference().child("Profile Pic");
-
-       /* save_info.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                uploadProfileImage();
-            }
-        });
-
-        change_photo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-        */
 
         /*Obtencion de datos del usuario*/
         BASE_DE_DATOS.child(user.getUid()).addValueEventListener(new ValueEventListener() {
@@ -110,12 +87,18 @@ public class Perfil extends AppCompatActivity {
 
                     String nombre = ""+snapshot.child("nombre").getValue();
                     String correo = ""+snapshot.child("correo").getValue();
+                    String img = ""+snapshot.child("imagen").getValue();
 
                     /*Setear los datos en los textview e imageview*/
                     UserName.setText(nombre);
                     MailData.setText(correo);
 
+                    // Decoding image
+                    byte[] decodedString = Base64.decode(img, Base64.DEFAULT);
+                    Bitmap decodedImg = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+
                     /*Obtener Imagen*/
+                        profileImg.setImageBitmap(decodedImg);
 
                 }
             }
@@ -123,6 +106,14 @@ public class Perfil extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        ActualizarPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Mandar a la ventana correspondiente para cambiar la contraseña
+                startActivity(new Intent(Perfil.this, CambiarPassword.class));
             }
         });
 
@@ -161,63 +152,4 @@ public class Perfil extends AppCompatActivity {
             }
         });
     }
-
-    /*private void getUserinfo(){
-        databaseReference.child(firebaseAuth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists() && snapshot.getChildrenCount() > 0){
-                    if (snapshot.hasChild("image")){
-                        String image = snapshot.child("image").getValue().toString();
-                        Picasso.get().load(image).into(profileImageView);
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-    } */
-
-   /* private void uploadProfileImage() {
-        final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setTitle("Set your profile");
-        progressDialog.setMessage("Espere un momento, se esta actualizando la información ");
-        progressDialog.show();
-
-        if (imageUri != null){
-            final StorageReference fileRef = storageProfilePicsRef.child(firebaseAuth.getCurrentUser().getUid()+".jpg");
-            uploadTask = fileRef.putFile(imageUri);
-            uploadTask.continueWithTask(new Continuation() {
-                @Override
-                public Object then(@NonNull Task task) throws Exception {
-                    if (!task.isSuccessful()){
-                        throw task.getException();
-                    }
-                    return fileRef.getDownloadUrl();
-                }
-            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                @Override
-                public void onComplete(@NonNull Task<Uri> task) {
-                    if (task.isSuccessful()){
-                        Uri downloadURL = task.getResult();
-                        myUri = downloadURL.toString();
-
-                        HashMap<String, Object> userMap = new HashMap<>();
-                        userMap.put("image",myUri);
-                        databaseReference.child(firebaseAuth.getCurrentUser().getUid()).updateChildren(userMap);
-
-                        progressDialog.dismiss();
-                    }
-                }
-            });
-        }else{
-            progressDialog.dismiss();
-            Toast.makeText(this, "Imagen no seleccionada", Toast.LENGTH_SHORT).show();
-        }
-    } */
-
 }

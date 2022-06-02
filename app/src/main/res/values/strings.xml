@@ -11,4 +11,15 @@
     <string name="Actualizar">Editar información</string>
     <string name="UpdatePass">Cambiar Contraseña</string>
     <string name="closeSesion">Cerrar Sesión</string>
+
+    <!--Cambio de contraseña-->
+    <string name="MisCredencialesTXT">Mis credenciales</string>
+    <string name="CorreoActualTXT">Correo actual: </string>
+    <string name="CorreoActual"> -- </string>
+    <string name="PassActualTXT">Contraseña actual: </string>
+    <string name="PassActual"> -- </string>
+    <string name="ActualPassET">Contraseña actual </string>
+    <string name="NuevoPassET">Nueva contraseña </string>
+    <string name="CambiarPassBtn">Cambiar Contraseña </string>
+    <string name="NotaTXT">Nota: si cambia de contraseña, se procederá a cerrar sesión automáticamente</string>
 </resources>
