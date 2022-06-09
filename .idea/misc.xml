@@ -6,15 +6,21 @@
         <entry key="..\:/Users/DELL/AndroidStudioProjects/WikiGami-master/app/src/main/res/drawable/transparent_background.xml" value="0.1515" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/WikiGami-master/app/src/main/res/layout/act_image_picker.xml" value="0.1375" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/WikiGami-master/app/src/main/res/layout/activity_cambiar_password.xml" value="0.33" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/WikiGami-master/app/src/main/res/layout/activity_clicked_item.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/WikiGami-master/app/src/main/res/layout/activity_clicked_item.xml" value="0.25" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/WikiGami-master/app/src/main/res/layout/activity_crear_tutorial.xml" value="0.2513586956521739" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/WikiGami-master/app/src/main/res/layout/activity_forgot_password.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/WikiGami-master/app/src/main/res/layout/activity_inicio.xml" value="0.25" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/WikiGami-master/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/WikiGami-master/app/src/main/res/layout/activity_main.xml" value="0.27898550724637683" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/WikiGami-master/app/src/main/res/layout/activity_perfil.xml" value="0.25" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/WikiGami-master/app/src/main/res/layout/activity_registrar.xml" value="0.25" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/WikiGami-master/app/src/main/res/layout/activity_reportar_origami.xml" value="0.2513586956521739" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/WikiGami-master/app/src/main/res/layout/editar_view.xml" value="0.2513586956521739" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/WikiGami-master/app/src/main/res/layout/favoritos_activity.xml" value="0.2513586956521739" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/WikiGami-master/app/src/main/res/layout/report_view.xml" value="0.2513586956521739" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/WikiGami-master/app/src/main/res/layout/row_items.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/WikiGami-master/app/src/main/res/menu/bottom_navigation.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/WikiGami-master/app/src/main/res/menu/opciones.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/WikiGami/app/src/main/res/drawable/ic_home.xml" value="0.162" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/WikiGami/app/src/main/res/drawable/ic_infoEdit_foreground.xml" value="0.153" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/WikiGami/app/src/main/res/drawable/selector.xml" value="0.1455" />

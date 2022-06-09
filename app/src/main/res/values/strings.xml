@@ -22,4 +22,16 @@
     <string name="NuevoPassET">Nueva contraseña </string>
     <string name="CambiarPassBtn">Cambiar Contraseña </string>
     <string name="NotaTXT">Nota: si cambia de contraseña, se procederá a cerrar sesión automáticamente</string>
+
+    <string-array name="dificultades">
+        <item>Básico</item>
+        <item>Intermedio</item>
+        <item>Avanzado</item>
+    </string-array>
+    <string-array name="filtros">
+        <item>Sin filtro</item>
+        <item>Básico</item>
+        <item>Intermedio</item>
+        <item>Avanzado</item>
+    </string-array>
 </resources>

@@ -9,18 +9,89 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_centerInParent="true"
         android:scaleType="fitXY"
         android:src="@mipmap/ic_launcher" />
 
     <TextView
-        android:id="@+id/tvName"
+        android:id="@+id/tvNombre"
+        style="@style/Widget.AppCompat.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
-        android:text="Name"
+        android:text="nombre..."
+        android:textSize="34sp" />
+
+    <TextView
+        android:id="@+id/tvDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvNombre"
+        android:layout_centerHorizontal="true"
+        android:text="descripcion..."
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tvDificultad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDescripcion"
+        android:layout_centerHorizontal="true"
+        android:text="dificultad..."
         android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnOpenVideo"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:text="Ver video"
+        android:layout_below="@id/tvDificultad"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabStar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btnOpenVideo"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="78dp"
+        android:clickable="true"
+        app:srcCompat="@drawable/ic_fav_outline" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/fabStar"
+        android:layout_marginLeft="67dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#E18B4A"
+        android:clickable="true"
+        app:srcCompat="@drawable/ic_report" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabEliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/fabStar"
+        android:layout_marginLeft="201dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#E14A4A"
+        android:clickable="true"
+        app:srcCompat="@drawable/ic_remove" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabEditar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/fabStar"
+        android:layout_marginLeft="133dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#4FE14A"
+        android:clickable="true"
+        app:srcCompat="@drawable/ic_edit" />
+
 </RelativeLayout>

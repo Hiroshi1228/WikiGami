@@ -15,6 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WikiGami">
         <activity
+            android:name=".ReportarOrigami"
+            android:exported="false" />
+        <activity
+            android:name=".CrearTutorial"
+            android:exported="false" />
+        <activity
             android:name=".CambiarPassword.CambiarPassword"
             android:exported="false" />
         <activity
@@ -50,8 +56,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!-- cache directory file provider paths -->
+        </activity> <!-- cache directory file provider paths -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -62,8 +67,7 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".ImagePickerActivity">
-        </activity>
+        <activity android:name=".ImagePickerActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
