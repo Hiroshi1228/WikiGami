@@ -55,7 +55,6 @@
             app:civ_border_width="2dp" />
 
 
-
         <TextView
             android:id="@+id/MailData"
             android:layout_width="330dp"
@@ -68,7 +67,7 @@
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/ActualizarInfo"
+            android:id="@+id/EliminarCuenta"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -76,7 +75,7 @@
             android:drawableStart="@drawable/ic_baseline_mode_24"
             android:drawablePadding="15dp"
             android:padding="15dp"
-            android:text="@string/Actualizar"
+            android:text="@string/DeleteAccount"
             android:textColor="#fff"
             android:textSize="15sp" />
 

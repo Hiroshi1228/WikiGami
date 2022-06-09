@@ -1,9 +1,12 @@
 package com.wikigami.wikigami;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -13,6 +16,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +28,7 @@ import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -38,7 +43,6 @@ import com.google.firebase.storage.StorageTask;
 import com.squareup.picasso.Picasso;
 import com.wikigami.wikigami.CambiarPassword.CambiarPassword;
 
-
 import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -48,13 +52,14 @@ public class Perfil extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
 
     TextView UserName, MailData;
-    Button ActualizarInfo, ActualizarPass, btnCloseSesion;
+    Button deleteCuenta, ActualizarPass, btnCloseSesion;
     CircleImageView profileImg;
 
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
 
     DatabaseReference BASE_DE_DATOS;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +69,7 @@ public class Perfil extends AppCompatActivity {
         UserName = findViewById(R.id.UserName);
         MailData = findViewById(R.id.MailData);
 
-        ActualizarInfo = findViewById(R.id.ActualizarInfo);
+        deleteCuenta = findViewById(R.id.EliminarCuenta);
         ActualizarPass = findViewById(R.id.ActualizarPass);
         btnCloseSesion = findViewById(R.id.btn_CloseSesion);
         profileImg = findViewById(R.id.profile_image);
@@ -151,5 +156,26 @@ public class Perfil extends AppCompatActivity {
                 finish();
             }
         });
+
+        deleteCuenta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                user.delete()
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    Log.d(TAG, "Cuenta de usuario eliminada.");
+                                    startActivity(new Intent(Perfil.this, LoginActivity.class));
+                                    Toast.makeText(Perfil.this, "Cuenta Eliminada", Toast.LENGTH_SHORT).show();
+                                    finish();
+                                }
+                            }
+                        });
+            }
+        });
+
     }
 }

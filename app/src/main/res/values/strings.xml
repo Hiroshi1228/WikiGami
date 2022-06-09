@@ -8,7 +8,7 @@
     <string name="User">Nombre de usuario</string>
     <string name="Email">Correo</string>
     <string name="Password">Contraseña</string>
-    <string name="Actualizar">Editar información</string>
+    <string name="DeleteAccount">Eliminar cuenta</string>
     <string name="UpdatePass">Cambiar Contraseña</string>
     <string name="closeSesion">Cerrar Sesión</string>
 
