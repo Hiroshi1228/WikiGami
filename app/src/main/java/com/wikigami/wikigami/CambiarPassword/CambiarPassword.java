@@ -50,8 +50,6 @@ public class CambiarPassword extends AppCompatActivity {
         MisCredencialesTXT = findViewById(R.id.MisCredencialesTXT);
         CorreoActualTXT = findViewById(R.id.CorreoActualTXT);
         CorreoActual = findViewById(R.id.CorreoActual);
-        PassActualTXT = findViewById(R.id.PassActualTXT);
-        PassActual = findViewById(R.id.PassActual);
         ActualPassET = findViewById(R.id.ActualPassET);
         NuevoPassET = findViewById(R.id.NuevoPassET);
         CambiarPassbtn = findViewById(R.id.CambiarPassbtn);
@@ -71,11 +69,9 @@ public class CambiarPassword extends AppCompatActivity {
 
                     //Obtención de los valores
                     String correo = ""+ds.child("correo").getValue();
-                    String pass = ""+ds.child("contraseña").getValue();
 
                     //Seteamos los datos en los texview
                     CorreoActual.setText(correo);
-                    PassActual.setText(pass);
                 }
             }
 

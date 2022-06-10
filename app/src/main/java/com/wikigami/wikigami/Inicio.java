@@ -62,7 +62,6 @@ public class Inicio extends AppCompatActivity {
 
         setSupportActionBar(findViewById(R.id.toolbar));
 
-
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
 

@@ -15,6 +15,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Base64;
 import android.util.Log;
 import android.view.MenuItem;
@@ -35,6 +36,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.auth.User;
 import com.google.firebase.storage.FirebaseStorage;
@@ -59,7 +61,6 @@ public class Perfil extends AppCompatActivity {
     FirebaseUser user;
 
     DatabaseReference BASE_DE_DATOS;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -167,9 +168,13 @@ public class Perfil extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
+                                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                    DatabaseReference ref = database.getReference();
+                                    user.getUid();
+                                    ref.child("REGISTRO_DE_USUARIOS").child(user.getUid()).removeValue();
                                     Log.d(TAG, "Cuenta de usuario eliminada.");
-                                    startActivity(new Intent(Perfil.this, LoginActivity.class));
                                     Toast.makeText(Perfil.this, "Cuenta Eliminada", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(Perfil.this, LoginActivity.class));
                                     finish();
                                 }
                             }

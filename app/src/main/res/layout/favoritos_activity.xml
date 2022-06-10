@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/f2a409da12284e173e655e297485b247"
+    android:background="@drawable/f9a9004a8f777579ef255ec979d0188b"
     android:orientation="vertical"
     tools:context=".Inicio">
 
@@ -15,7 +15,7 @@
         android:background="@color/amarillo"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        android:translationZ="@android:dimen/notification_large_icon_width"/>
+        android:translationZ="@android:dimen/notification_large_icon_width" />
 
     <GridView
         android:id="@+id/gridView"
@@ -29,7 +29,7 @@
         android:numColumns="2"
         android:textAlignment="center"
 
-        android:verticalSpacing="20dp" >
+        android:verticalSpacing="20dp">
 
 
     </GridView>

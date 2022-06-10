@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/f2a409da12284e173e655e297485b247"
+    android:background="@drawable/f9a9004a8f777579ef255ec979d0188b"
     tools:context=".Perfil">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:drawableStart="@drawable/ic_baseline_mode_24"
+            android:drawableLeft="@drawable/ic_baseline_mode_24"
             android:drawablePadding="15dp"
             android:padding="15dp"
             android:text="@string/DeleteAccount"
@@ -81,11 +81,11 @@
 
         <Button
             android:id="@+id/ActualizarPass"
-            android:layout_width="220dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:drawableStart="@drawable/ic_pass"
+            android:drawableLeft="@drawable/ic_pass"
             android:drawablePadding="15dp"
             android:padding="15dp"
             android:text="@string/UpdatePass"
@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:drawableStart="@drawable/ic_logout"
+            android:drawableLeft="@drawable/ic_logout"
             android:drawablePadding="15dp"
             android:padding="15dp"
             android:text="@string/closeSesion"
